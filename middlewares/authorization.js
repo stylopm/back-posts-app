@@ -4,6 +4,10 @@ module.exports = (req, res, next) => {
 	// EXTRAEMOS EL TOKEN QUE VIENE DESDE LA PETICIÓN
 	const token = req.header('x-auth-token')
 
+	// Autenticación sin estado con Tokens
+    // Por ello una de las nuevas tendencias en cuanto al desarrollo web moderno se refiere, 
+	// es la autenticación por medio de Tokens y que nuestro backend sea un API RESTful sin información de estado, stateless.
+
 	// SI NO HAY TOKEN, RETORNAMOS UN ERROR
 	if (!token) {
 		return res.status(401).json({

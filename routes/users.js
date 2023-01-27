@@ -127,6 +127,18 @@ app.put('/actualizar', auth, async (req, res) => {
 	}
 })
 
+app.get('/lista', auth, async (req, res) => {
+	try {
+		const uses = await Usuario.find({});
+		res.json(uses)
+	} catch (error) {
+		res.status(500).json({
+			msg: 'Hubo un error actualizando la Usuario',
+		})
+	}
+})
+
+
 //POSTEOS
 app.put('/post', auth, async (req, res) => {
 	const { id, post } = req.body

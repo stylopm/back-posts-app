@@ -16,5 +16,5 @@ app.get('/', (req, res) => res.send('UCAMP API POSTS'))
 
 // 4. SERVIDOR
 app.listen(process.env.PORT, () => {
-	console.log('El servidor está corriendo en 4000')
+	console.log('El servidor está corriendo en ' + process.env.PORT)
 })
